@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f4f4f4 0%, #e0e7ff 100%);
+    min-height: 100vh;
+}
+
+.music-navbar {
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5em 0;
+}
+.music-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+.music-navbar li {
+    display: inline;
+}
+.music-navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.5em 1.2em;
+    border-radius: 30px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.music-navbar a:hover, .music-navbar a.active {
+    background: #ff4e50;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255,78,80,0.2);
+}
+.music-navbar i.fa-music {
+    color: #ffd700;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+}
+
+.project-card p {
+    margin: 0 0 15px;
+}
+
+.project-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .music-navbar ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    main {
+        padding: 16px 6px;
+    }
+}
