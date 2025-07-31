@@ -25,15 +25,16 @@ body {
 .music-navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 0.5em 1.2em;
+    font-size: 1.5em;
+    padding: 0.8em 1.2em;
     border-radius: 30px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    font-weight: 500;
+    gap: 0.7em;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    box-shadow: 0 4px 16px rgba(255,78,80,0.10);
 }
 .music-navbar a:hover, .music-navbar a.active {
     background: #ff4e50;
