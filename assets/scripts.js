@@ -139,7 +139,15 @@ function addMobileTouchEnhancements() {
         });
         
         musicToggle.addEventListener('touchend', function(e) {
-            e.preventDefault();
+            const now = Date.now();
+            const lastTap = this.dataset.lastTap || 0;
+            const timeDiff = now - lastTap;
+            
+            if (timeDiff < 300 && timeDiff > 0) {
+                e.preventDefault();
+            }
+            
+            this.dataset.lastTap = now;
         });
     }
     
