@@ -8,10 +8,22 @@
 </head>
 <body>
     <div class="stars"></div>
+  
+    <audio id="background-music" loop preload="auto">
+        <source src="assets/bg-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="music-controls">
+        <button id="music-toggle" title="Toggle Background Music">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </div>
+    
     <nav class="navbar">
-        <a href="pages/about.html"><i class="fa fa-user"></i>About</a>
-        <a href="pages/resume.html"><i class="fa fa-file-alt"></i>Resume</a>
-        <a href="pages/github.html"><i class="fab fa-github"></i>GitHub</a>
+        <a href="episodes/about"><i class="fa fa-user"></i>About</a>
+        <a href="episodes/resume"><i class="fa fa-file-alt"></i>Resume</a>
+        <a href="episodes/github"><i class="fab fa-github"></i>GitHub</a>
     </nav>
     <main>
         <h1 class="markus-zone-title">The Markus Zone</h1>
