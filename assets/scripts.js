@@ -87,7 +87,7 @@ function initializeBackgroundMusic() {
 // keyboardSupport is a function that adds keyboard controls for volume adjustment
 function keyBoardSupport() {
     document.addEventListener('keydown', function(e) {
-        if (e.code === 'VolumeUp' || e.code === 'AudioVolumeUp') {
+        if (e.code === 'VolumeUp' || e.code === 'AudioVolumeUp' || e.code === 'ArrowUp') {
             e.preventDefault();
             if (backgroundMusic.paused) {
                 backgroundMusic.play();
@@ -98,7 +98,7 @@ function keyBoardSupport() {
             }
         }
         
-        if (e.code === 'VolumeDown' || e.code === 'AudioVolumeDown') {
+        if (e.code === 'VolumeDown' || e.code === 'AudioVolumeDown' || e.code === 'ArrowDown') {
             e.preventDefault();
             if (!backgroundMusic.paused) {
                 backgroundMusic.volume = Math.max(0, backgroundMusic.volume - 0.1);
@@ -170,10 +170,8 @@ function addMobileTouchEnhancements() {
 }
 
 // initializeNavigation is a function that highlights the current page in the navigation bar
-function initializeNavigation() {
+function initializeNavigation(currentPath = (window.location.pathname.split('/').pop() || 'index.html')) {
     const navLinks = document.querySelectorAll('.navbar a');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (linkPath === currentPath) {
