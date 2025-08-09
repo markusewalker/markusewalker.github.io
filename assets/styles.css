@@ -61,7 +61,7 @@ main {
 
 .company-logo {
     height: 1.6em;
-    width: auto;
+    width: 1.6em;
     vertical-align: middle;
     margin-right: 0.5em;
     border-radius: 4px;
@@ -263,4 +263,83 @@ body {
 
 #music-toggle:active {
     transform: scale(0.95);
+}
+
+.project-link {
+    color: #ffd700;
+    text-decoration: underline dotted;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.project-link:hover, .project-link:focus {
+    color: #fff700;
+    text-decoration: underline solid;
+}
+
+.work-entry summary {
+    position: relative;
+    padding-left: 2em;
+}
+
+.work-entry summary::before {
+    content: '\25B6';
+    position: absolute;
+    left: 0.2em;
+    top: 0.7em;
+    font-size: 1.1em;
+    color: #ffd700;
+    transition: transform 0.2s;
+    text-shadow: 0 1px 4px #000a;
+}
+
+.work-entry[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.work-entry {
+    margin-bottom: 1.5em;
+    background: rgba(30, 30, 40, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #000a;
+    border: 1px solid #333;
+    padding: 0.5em 0.8em;
+    transition: box-shadow 0.2s;
+}
+
+.work-entry summary {
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.work-entry[open] {
+    box-shadow: 0 4px 16px #000c;
+}
+
+.work-entry summary::-webkit-details-marker {
+    display: none;
+}
+
+.work-entry summary h3 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.work-entry summary p {
+    margin: 0 0 0 2.2em;
+    font-size: 1em;
+    color: #ffd700;
+    text-shadow: 0 1px 4px #000a;
+}
+
+.work-entry ul {
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-left: 2.5em;
 }
