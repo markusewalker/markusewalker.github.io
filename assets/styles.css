@@ -118,9 +118,12 @@ main {
     width: 100%;
     padding: 2rem 2.5rem;
     background: rgba(7, 4, 22, 0.96);
-    border-radius: 14px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
-    border: 1px solid #333;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.22), 0 1.5px 8px 0 rgba(255,255,255,0.04) inset;
+    border: 3px solid transparent;
+    background-clip: padding-box, border-box;
+    border-image: linear-gradient(135deg, #ffd700 0%, #6a5acd 100%);
+    border-image-slice: 1;
 }
 
 .center-section h2 {
@@ -300,9 +303,12 @@ body {
 .work-entry {
     margin-bottom: 1.5em;
     background: rgba(30, 30, 40, 0.85);
-    border-radius: 10px;
-    box-shadow: 0 2px 8px #000a;
-    border: 1px solid #333;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(255,255,255,0.04) inset;
+    border: 2.5px solid transparent;
+    background-clip: padding-box, border-box;
+    border-image: linear-gradient(135deg, #ffd700 0%, #6a5acd 100%);
+    border-image-slice: 1;
     padding: 0.5em 0.8em;
     transition: box-shadow 0.2s;
 }
