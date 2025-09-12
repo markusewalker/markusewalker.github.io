@@ -9,39 +9,47 @@
 </head>
 
 <body>
-   <div class="stars"></div>
-   
-   <audio id="background-music" loop preload="auto">
+    <div class="stars"></div>
+
+    <audio id="background-music" loop preload="auto">
         <source src="../assets/bg-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-   </audio>
+    </audio>
 
-   <div class="music-controls">
+    <div class="music-controls">
         <button id="music-toggle" title="Toggle Background Music">
             <i class="fas fa-volume-mute"></i>
         </button>
-   </div>
-   
-   <nav class="navbar">
-        <a href="../"><i class="fa fa-home"></i>Home</a>
-        <a href="resume"><i class="fa fa-file-alt"></i>Resume</a>
-        <a href="github"><i class="fab fa-github"></i>GitHub</a>
-   </nav>
+    </div>
+
+    <nav class="navbar minimal-navbar">
+        <div class="navbar-content">
+            <a href="../" class="nav-logo">MW</a>
+            <div class="nav-links">
+                <a href="../"><i class="fa fa-home"></i> Home</a>
+                <a href="resume"><i class="fa fa-file-alt"></i> Resume</a>
+                <a href="github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </nav>
 
     <main>
-        <div class="photo-row">
-            <img src="../assets/headshot.png" alt="Headshot Photo" class="profile-photo">
-        </div>
-
-        <div class="center-section">
-            <section>
-                <h1 class="markus-zone-title">About Me</h1>
-                <p class="markus-zone-description">Markus is a tech professional with 9+ years of experience in support engineering, product engineering and QA. Skilled in building scalable test frameworks, automating infrastructure and integrating CI/CD pipelines.</p>
-                <p class="markus-zone-description">Outside of work, Markus is a loving husband to his wife and father to his twin sons. Some of his interests include fitness, music and sports.</p>
-                <p class="markus-zone-description">Feel free to connect with him on <a href="https://www.linkedin.com/in/markuswalker" target="_blank">LinkedIn</a>!</p>
-            </section>
+        <div class="centered-card">
+            <img src="../assets/headshot.png" alt="Headshot Photo" class="profile-photo mb-3">
+            <h1 class="markus-zone-title">About Me</h1>
+            <p class="markus-zone-description">Markus is a tech professional with 9+ years of experience in support engineering, product engineering and QA. Skilled in building scalable test frameworks, automating infrastructure and integrating CI/CD pipelines.</p>
+            <p class="markus-zone-description">Outside of work, Markus is a loving husband to his wife and father to his twin sons. Some of his interests include fitness, music and sports.</p>
         </div>
     </main>
+
+        <footer class="contact-footer">
+            <div class="footer-content">
+                <span>Connect:</span>
+                <a href="https://www.linkedin.com/in/markuswalker" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+            </div>
+        </footer>
 
 </body>
     <script src="../assets/scripts.js"></script>
