@@ -8,164 +8,145 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <div class="stars"></div>
-    
+
     <audio id="background-music" loop preload="auto">
         <source src="../assets/bg-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    
+
     <div class="music-controls">
         <button id="music-toggle" title="Toggle Background Music">
             <i class="fas fa-volume-mute"></i>
         </button>
     </div>
-    
-    <nav class="navbar">
-        <a href="../"><i class="fa fa-home"></i>Home</a>
-        <a href="about"><i class="fa fa-user"></i>About</a>
-        <a href="github"><i class="fab fa-github"></i>GitHub</a>
+
+    <nav class="navbar minimal-navbar">
+        <div class="navbar-content">
+            <a href="../" class="nav-logo">MW</a>
+            <div class="nav-links">
+                <a href="../"><i class="fa fa-home"></i> Home</a>
+                <a href="about"><i class="fa fa-user"></i> About</a>
+                <a href="github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
     </nav>
 
     <main>
-        <div class="center-section">
-            <section>
-                <h2 class="markus-zone-title">Resume</h2>
-                <details class="work-entry">
-                    <summary>
-                        <h3><img src="../assets/suse.png" alt="SUSE logo" class="company-logo"> Senior Software QA Engineer</h3>
-                        <p>Remote | November 2022 - Present</p>
+      <div class="centered-card">
+        <h2 class="markus-zone-title">Resume</h2>
+        <details class="work-entry">
+            <summary>
+                <h3><img src="../assets/suse.png" alt="SUSE logo" class="company-logo"> Senior Software QA Engineer</h3>
+                <p>Remote | November 2022 - Present</p><br>
+            </summary>
+            <strong>Architect for tfp-automation, a GitHub Actions-focused framework that tests Rancher Terraform providers, provisions Rancher environments, and replaces legacy Jenkins pipelines for streamlined regression and release testing.</strong><br><br>
+            <strong>Lead validation of complex Rancher issues, performing thorough testing and root cause analysis to facilitate efficient bug triage and quality improvements.</strong><br><br>
+            <strong>Actively guided QA automation efforts, mentored junior engineers, and exercised cross-team collaboration across Rancher teams.</strong><br><br>
+            <strong>Maintained QA documentation for automation, issue validation, and test setup, improving team knowledge retention and onboarding.</strong><br>
+        </details>
+        <details class="work-entry">
+            <summary>
+                <h3><img src="../assets/suse.png" alt="SUSE logo" class="company-logo"> Software QA Engineer</h3>
+                <p>Remote | April 2022 - November 2022</p><br>
+            </summary>
+            <strong>Executed comprehensive QA testing for Rancher to validate issues and log defects to improve product quality.</strong><br><br>
+            <strong>Developed and maintained automated test cases within the Go test framework, enhancing test coverage and reducing manual testing.</strong><br><br>
+            <strong>Authored internal Confluence documentation, expanding technical knowledge and improving collaboration.</strong><br>
+        </details>
+        <details class="work-entry">
+            <summary>
+                <h3><img src="../assets/esri.png" alt="ESRI logo" class="company-logo"> Linux Product Engineer</h3>
+                        <p>Redlands, CA | November 2019 - April 2022</p><br>
                     </summary>
-                    <ul>
-                        <li>Architect for tfp-automation, a GitHub Actions-focused framework that tests Rancher Terraform providers, provisions Rancher environments, and replaces legacy Jenkins pipelines for streamlined regression and release testing.</li>
-                        <li>Lead validation of complex Rancher issues, performing thorough testing and root cause analysis to facilitate efficient bug triage and quality improvements.</li>
-                        <li>Actively guided QA automation efforts, mentored junior engineers, and exercised cross-team collaboration across Rancher teams.</li>
-                        <li>Maintained QA documentation for automation, issue validation, and test setup, improving team knowledge retention and onboarding.</li>
-                    </ul>
-                </details>
-                <details class="work-entry">
-                    <summary>
-                        <h3><img src="../assets/suse.png" alt="SUSE logo" class="company-logo"> Software QA Engineer</h3>
-                        <p>Remote | April 2022 - November 2022</p>
-                    </summary>
-                    <ul>
-                        <li>Executed comprehensive QA testing for Rancher to validate issues and log defects to improve product quality.</li>
-                        <li>Developed and maintained automated test cases within the Go test framework, enhancing test coverage and reducing manual testing.</li>
-                        <li>Authored internal Confluence documentation, expanding technical knowledge and improving collaboration.</li>
-                    </ul>
-                </details>
-                <details class="work-entry">
-                    <summary>
-                        <h3><img src="../assets/esri.png" alt="ESRI logo" class="company-logo"> Linux Product Engineer</h3>
-                        <p>Redlands, CA | November 2019 - April 2022</p>
-                    </summary>
-                    <ul>
-                        <li>Validated and certified supported Linux distributions for ArcGIS Enterprise.</li>
-                        <li>Lead engineer for the deployment of ArcGIS Enterprise on Kubernetes, driving scalable, reliable installation and configuration processes.</li>
-                        <li>Implemented Jenkins-based regression testing framework for ArcGIS Enterprise, improving release quality and early defect detection.</li>
-                        <li>Authored the “Monthly Linux Tip” blog series for ArcGIS, consistently engaging readers with ~500 page views per post and enhancing Linux user knowledge.</li>
-                    </ul>
+                        <strong>Validated and certified supported Linux distributions for ArcGIS Enterprise.</strong><br><br>
+                        <strong>Lead engineer for the deployment of ArcGIS Enterprise on Kubernetes, driving scalable, reliable installation and configuration processes.</strong><br><br>
+                        <strong>Implemented Jenkins-based regression testing framework for ArcGIS Enterprise, improving release quality and early defect detection.</strong><br><br>
+                        <strong>Authored the “Monthly Linux Tip” blog series for ArcGIS, consistently engaging readers with ~500 page views per post and enhancing Linux user knowledge.</strong><br>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><img src="../assets/esri.png" alt="ESRI logo" class="company-logo"> Support Engineer</h3>
-                        <p>Redlands, CA | January 2018 - November 2019</p>
+                        <p>Redlands, CA | January 2018 - November 2019</p><br>
                     </summary>
-                    <ul>
-                        <li>Presented troubleshooting presentations for customers at ESRI UC 2019.</li>
-                        <li>Resolved ~800 cases with high-quality customer satisfaction and positive customer surveys.</li>
-                        <li>Mentored implementation and WebGIS analysts.</li>
-                    </ul>
+                        <strong>Presented troubleshooting presentations for customers at ESRI UC 2019.</strong><br><br>
+                        <strong>Resolved ~800 cases with high-quality customer satisfaction and positive customer surveys.</strong><br><br>
+                        <strong>Mentored implementation and WebGIS analysts.</strong><br>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><img src="../assets/intel.png" alt="Intel logo" class="company-logo"> Software Technical Consultant Engineer</h3>
-                        <p>Santa Clara, CA | July 2016 - December 2017</p>
+                        <p>Santa Clara, CA | July 2016 - December 2017</p><br> 
                     </summary>
-                    <ul>
-                        <li>Delivered documentation, code samples, and tutorial videos for Parallel XE 2018.</li>
-                        <li>Presented Intel C++ / Fortran compiler presentations to stakeholders.</li>
-                        <li>Led system administrative tasks for maintaining Intel compiler machines.</li>
-                    </ul>
+                        <strong>Delivered documentation, code samples, and tutorial videos for Parallel XE 2018.</strong><br><br>
+                        <strong>Presented Intel C++ / Fortran compiler presentations to stakeholders.</strong><br><br>
+                        <strong>Led system administrative tasks for maintaining Intel compiler machines.</strong><br>
                 </details>
             </section>
 
         </div>
-        <div class="center-section">
+        <div class="centered-card">
             <section>
                 <h2 class="markus-zone-title">Working Skills</h2>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-desktop" aria-hidden="true" style="margin-right:0.5em;"></i>Operating Systems</h3>
                     </summary>
-                    <ul>
-                        <li><strong>Linux</strong></li>
-                        <li><strong>macOS</strong></li>
-                        <li><strong>Windows</strong></li>
-                    </ul>
+                        <strong>Linux</strong><br>
+                        <strong>macOS</strong><br>
+                        <strong>Windows</strong>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-cloud" aria-hidden="true" style="margin-right:0.5em;"></i>Cloud Computing</h3>
                     </summary>
-                    <ul>
-                        <li><strong>AWS</strong></li>
-                        <li><strong>Azure</strong></li>
-                        <li><strong>GCP</strong></li>
-                        <li><strong>Linode</strong></li>
-                    </ul>
+                        <strong>AWS</strong><br>
+                        <strong>Azure</strong><br>
+                        <strong>GCP</strong><br>
+                        <strong>Linode</strong>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-cube" aria-hidden="true" style="margin-right:0.5em;"></i>Containerization</h3>
                     </summary>
-                    <ul>
-                        <li><strong>Docker</strong></li>
-                        <li><strong>Kubernetes</strong></li>
-                        <li><strong>Helm</strong></li>
-                    </ul>
+                        <strong>Docker</strong><br>
+                        <strong>Kubernetes</strong><br>
+                        <strong>Helm</strong>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-vial" aria-hidden="true" style="margin-right:0.5em;"></i>Testing</h3>
                     </summary>
-                    <ul>
-                        <li><strong>Functional</strong></li>
-                        <li><strong>Regression</strong></li>
-                        <li><strong>Smoke</strong></li>
-                        <li><strong>Sanity</strong></li>
-                        <li><strong>Negative</strong></li>
-                    </ul>
+                        <strong>Functional</strong><br>
+                        <strong>Regression</strong><br>
+                        <strong>Smoke</strong><br>
+                        <strong>Sanity</strong><br>
+                        <strong>Negative</strong>
                 </details>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-tools" aria-hidden="true" style="margin-right:0.5em;"></i>Tools</h3>
                     </summary>
-                    <ul>
-                        <li><strong>Terraform</strong></li>
-                        <li><strong>Git</strong></li>
-                        <li><strong>Jenkins</strong></li>
-                        <li><strong>Jira</strong></li>
-                        <li><strong>Confluence</strong></li>
-                        <li><strong>GitHub</strong></li>
-                    </ul>
+                        <strong>Terraform</strong><br>
+                        <strong>Git</strong><br>
+                        <strong>Jenkins</strong><br>
+                        <strong>Jira</strong><br>
+                        <strong>Confluence</strong><br>
+                        <strong>GitHub</strong>
                 </details>
             </section>
         </div>
 
-        <div class="center-section">
+        <div class="centered-card">
             <section>
                 <h2 class="markus-zone-title">Education</h2>
                 <details class="work-entry">
                     <summary>
                         <h3><i class="fa fa-graduation-cap" aria-hidden="true" style="margin-right:0.5em;"></i>Undergraduate</h3>
                     </summary>
-                    <ul>
-                        <li><strong>Degree: B.S. Computer Science & Engineering</strong></li>
-                        <li><strong>University: University of California, Merced</strong></li>
-                        <li><strong>Years: 2012 - 2016</strong></li>
-                    </ul>
+                        <strong>Degree: B.S. Computer Science & Engineering</strong><br>
+                        <strong>University: University of California, Merced</strong><br>
+                        <strong>Years: 2012 - 2016</strong>
                 </details>
             </section>
         </div>
