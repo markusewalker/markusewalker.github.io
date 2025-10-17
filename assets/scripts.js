@@ -1,3 +1,65 @@
+let youScore = Number(localStorage.getItem('youScore')) || 0;
+let tmzScore = Number(localStorage.getItem('tmzScore')) || 0;
+let gameOver = false;
+
+const WINNING_SCORE = 100;
+
+function updateScoreboard() {
+    const youScoreElement = document.getElementById('score-you');
+    const tmzScoreElement = document.getElementById('score-tmz');
+
+    const you = typeof global !== 'undefined' && typeof global.youScore !== 'undefined' ? global.youScore : youScore;
+    const tmz = typeof global !== 'undefined' && typeof global.tmzScore !== 'undefined' ? global.tmzScore : tmzScore;
+
+    if (youScoreElement) {
+        youScoreElement.textContent = you;
+    }
+
+    if (tmzScoreElement) {
+        tmzScoreElement.textContent = tmz;
+    }
+}
+
+// saveScores saves the current scores to localStorage
+function saveScores() {
+    localStorage.setItem('youScore', youScore);
+    localStorage.setItem('tmzScore', tmzScore);
+}
+
+// randomScore generates a random score between 1 and 3 to simulate basketball
+function randomScore() {
+    return Math.floor(Math.random() * 3) + 1;
+}
+
+// randomTeam randomly selects either 'you' or 'tmz' to receive the score
+function randomTeam() {
+    return Math.random() < 0.5 ? 'you' : 'tmz';
+}
+
+// checkWinner checks if either team has reached the winning score
+function checkWinner() {
+    if (!gameOver && (youScore >= WINNING_SCORE || tmzScore >= WINNING_SCORE)) {
+        gameOver = true;
+    }
+}
+
+setInterval(() => {
+    if (!gameOver) {
+        const points = randomScore();
+        const team = randomTeam();
+
+        if (team === 'you') {
+            youScore = Math.min(youScore + points, WINNING_SCORE);
+        } else {
+            tmzScore = Math.min(tmzScore + points, WINNING_SCORE);
+        }
+
+        updateScoreboard();
+        saveScores();
+        checkWinner();
+    }
+}, 5000);
+
 // initializeStars is a function that creates a starry background effect
 function initializeStars() {
     const starsContainer = document.querySelector('.stars');
