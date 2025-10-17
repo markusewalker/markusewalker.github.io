@@ -259,6 +259,7 @@ function initializeSmoothScrolling() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    updateScoreboard();
     initializeStars();
     initializeBackgroundMusic();
     initializeNavigation();
