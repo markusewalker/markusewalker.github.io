@@ -1,5 +1,9 @@
 # Personal Website
 
+| Tests |
+|:-----:|
+| [![Tests](https://github.com/markusewalker/markusewalker.github.io/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/markusewalker/markusewalker.github.io/actions/workflows/run-tests.yml) |
+
 This repoistory is meant to serve as my public-facing website to highlight my career.
 
 ## Music Credits

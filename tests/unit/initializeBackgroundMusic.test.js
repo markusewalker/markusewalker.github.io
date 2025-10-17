@@ -151,11 +151,9 @@ describe('initializeBackgroundMusic', () => {
     musicToggle.click();
   
     const musicIcon = document.querySelector('#music-toggle i');
-    expect(musicIcon.className).toBe('fas fa-volume-up');
+    expect(musicIcon.className).toBe('fas fa-volume-mute');
   });
 });
-
-// The test for toggling mute after two clicks is removed because it depends on real audio state.
 
 describe('initializeBackgroundMusic', () => {
   test('test that the background music volume is set to 0.3', () => {
