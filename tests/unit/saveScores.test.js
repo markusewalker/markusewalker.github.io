@@ -8,12 +8,12 @@ describe('saveScores', () => {
     beforeEach(() => {
         global.youScore = 0;
         global.tmzScore = 0;
-        localStorage.clear();
+        sessionStorage.clear();
     });
 
-    it('saves scores to localStorage', () => {
+    it('saves scores to sessionStorage', () => {
         saveScores();
-        expect(Number(localStorage.getItem('youScore'))).toBe(0);
-        expect(Number(localStorage.getItem('tmzScore'))).toBe(0);
+        expect(Number(sessionStorage.getItem('youScore'))).toBe(0);
+        expect(Number(sessionStorage.getItem('tmzScore'))).toBe(0);
     });
 });

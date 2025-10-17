@@ -1,5 +1,5 @@
-let youScore = Number(localStorage.getItem('youScore')) || 0;
-let tmzScore = Number(localStorage.getItem('tmzScore')) || 0;
+let youScore = Number(sessionStorage.getItem('youScore')) || 0;
+let tmzScore = Number(sessionStorage.getItem('tmzScore')) || 0;
 let gameOver = false;
 
 const WINNING_SCORE = 100;
@@ -20,10 +20,10 @@ function updateScoreboard() {
     }
 }
 
-// saveScores saves the current scores to localStorage
+// saveScores saves the current scores to sessionStorage
 function saveScores() {
-    localStorage.setItem('youScore', youScore);
-    localStorage.setItem('tmzScore', tmzScore);
+    sessionStorage.setItem('youScore', youScore);
+    sessionStorage.setItem('tmzScore', tmzScore);
 }
 
 // randomScore generates a random score between 1 and 3 to simulate basketball
@@ -96,8 +96,8 @@ function initializeBackgroundMusic() {
 
     if (!backgroundMusic || !musicToggle) return;
 
-    const musicEnabled = localStorage.getItem('musicEnabled') !== 'false';
-    const savedPosition = localStorage.getItem('musicCurrentTime');
+    const musicEnabled = sessionStorage.getItem('musicEnabled') !== 'false';
+    const savedPosition = sessionStorage.getItem('musicCurrentTime');
     
     if (savedPosition) {
         backgroundMusic.currentTime = parseFloat(savedPosition);
@@ -117,11 +117,11 @@ function initializeBackgroundMusic() {
         if (backgroundMusic.paused) {
             backgroundMusic.play();
             musicIcon.className = 'fas fa-volume-up';
-            localStorage.setItem('musicEnabled', 'true');
+            sessionStorage.setItem('musicEnabled', 'true');
         } else {
             backgroundMusic.pause();
             musicIcon.className = 'fas fa-volume-mute';
-            localStorage.setItem('musicEnabled', 'false');
+            sessionStorage.setItem('musicEnabled', 'false');
         }
     });
 
@@ -133,13 +133,13 @@ function initializeBackgroundMusic() {
 
     setInterval(function() {
         if (!backgroundMusic.paused && !backgroundMusic.ended) {
-            localStorage.setItem('musicCurrentTime', backgroundMusic.currentTime.toString());
+            sessionStorage.setItem('musicCurrentTime', backgroundMusic.currentTime.toString());
         }
     }, 1000);
 
     window.addEventListener('beforeunload', function() {
         if (!backgroundMusic.paused && !backgroundMusic.ended) {
-            localStorage.setItem('musicCurrentTime', backgroundMusic.currentTime.toString());
+            sessionStorage.setItem('musicCurrentTime', backgroundMusic.currentTime.toString());
         }
     });
 
@@ -154,7 +154,7 @@ function keyBoardSupport() {
             if (backgroundMusic.paused) {
                 backgroundMusic.play();
                 musicIcon.className = 'fas fa-volume-up';
-                localStorage.setItem('musicEnabled', 'true');
+                sessionStorage.setItem('musicEnabled', 'true');
             } else {
                 backgroundMusic.volume = Math.min(1, backgroundMusic.volume + 0.1);
             }
@@ -167,7 +167,7 @@ function keyBoardSupport() {
                 if (backgroundMusic.volume === 0) {
                     backgroundMusic.pause();
                     musicIcon.className = 'fas fa-volume-mute';
-                    localStorage.setItem('musicEnabled', 'false');
+                    sessionStorage.setItem('musicEnabled', 'false');
                 }
             }
         }
@@ -177,11 +177,11 @@ function keyBoardSupport() {
             if (backgroundMusic.paused) {
                 backgroundMusic.play();
                 musicIcon.className = 'fas fa-volume-up';
-                localStorage.setItem('musicEnabled', 'true');
+                sessionStorage.setItem('musicEnabled', 'true');
             } else {
                 backgroundMusic.pause();
                 musicIcon.className = 'fas fa-volume-mute';
-                localStorage.setItem('musicEnabled', 'false');
+                sessionStorage.setItem('musicEnabled', 'false');
             }
         }
     });

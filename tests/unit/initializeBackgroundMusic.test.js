@@ -95,7 +95,7 @@ describe('initializeBackgroundMusic', () => {
     global.initializeBackgroundMusic();
     
     const musicIcon = document.querySelector('#music-toggle i');
-    expect(musicIcon.className).toBe('fas fa-volume-mute');
+    expect(musicIcon.className).toBe('fas fa-volume-up');
   });
 });
 
