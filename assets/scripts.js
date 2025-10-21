@@ -258,9 +258,73 @@ function initializeSmoothScrolling() {
     });
 }
 
+// initializeBackToTop sets up the sticky back-to-top button for relevant pages
+function initializeBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) {
+        return;
+    }
+
+    const showAfter = 300;
+    let lastScrollY = window.scrollY || window.pageYOffset;
+
+    function updateButtonVisibility() {
+        const currentY = window.scrollY || window.pageYOffset;
+        if (currentY > showAfter) {
+            btn.classList.add('show');
+            try { 
+                btn.style.display = 'block'; 
+            } catch (e) {}
+
+            btn.setAttribute('aria-hidden', 'false');
+        } else {
+            btn.classList.remove('show');
+            try { 
+                btn.style.display = 'none'; 
+            } catch (e) {}
+
+            btn.setAttribute('aria-hidden', 'true');
+        }
+
+        lastScrollY = currentY;
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateButtonVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) {
+            window.scrollTo(0, 0);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.body.focus({ preventScroll: true });
+    });
+
+    try { 
+        btn.style.display = 'block'; 
+    } catch (e) {}
+
+    btn.setAttribute('aria-hidden', 'false');
+
+    window.requestAnimationFrame(updateButtonVisibility);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeStars();
     initializeBackgroundMusic();
     initializeNavigation();
     initializeSmoothScrolling();
+    initializeBackToTop();
 });

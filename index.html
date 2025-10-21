@@ -33,24 +33,29 @@
         </button>
     </div>
     
-    <nav class="navbar">
     <nav class="navbar minimal-navbar">
-        <div class="navbar-content">
-            <a href="#" class="nav-logo">MW</a>
-            <div class="nav-links">
-                <a href="episodes/about.html"><i class="fa fa-user"></i> About</a>
-                <a href="episodes/resume.html"><i class="fa fa-file-alt"></i> Resume</a>
-                <a href="episodes/github.html"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/markuswalker"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="episodes/about">About</a></li>
+                <li><a class="menu__item" href="episodes/resume">Resume</a></li>
+                <li><a class="menu__item" href="episodes/github">GitHub</a></li>
+                <li><a class="menu__item" href="https://www.linkedin.com/in/markuswalker">LinkedIn</a></li>
+            </ul>
         </div>
-    </nav>
     </nav>
 
     <main>
     <h1 class="markus-zone-title creepy-fade">The Markus Zone</h1>
     <p class="markus-zone-description creepy-fade"><em>"You're travelling through another dimension, a dimension not only of sight and sound but of mind; a journey into a wondrous land whose boundaries are that of imagination. That's the signpost up ahead - your next stop, the Markus Zone!"</em></p>
     </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <script src="assets/scripts.js"></script>
 </body>
