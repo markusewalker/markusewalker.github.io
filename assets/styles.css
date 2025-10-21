@@ -7,6 +7,7 @@ main {
     padding: 16px 6px;
 }
 
+/* Start custom TwilightZone font */
 @font-face {
     font-family: 'TwilightZone';
     src: url('fonts/twilightzone.TTF') format('truetype');
@@ -34,7 +35,9 @@ main {
     line-height: 1.6;
     text-shadow: 0 1px 4px #000a;
 }
+/* End custom TwilightZone font */
 
+/* Start photos and logos */
 .profile-photo {
     width: 220px;
     height: 220px;
@@ -69,7 +72,9 @@ main {
     background: #fff;
     object-fit: contain;
 }
+/* End photos and logos */
 
+/* Start navbar */
 .minimal-navbar {
     background: rgba(10, 10, 20, 0.98);
     box-shadow: 0 2px 16px #000a;
@@ -122,8 +127,9 @@ main {
     background: #ffd70022;
     color: #ffd700;
 }
+/* End navbar */
 
-
+/* Start centered card */
 .centered-card {
     background: rgba(30, 30, 60, 0.65);
     border-radius: 2rem;
@@ -191,7 +197,9 @@ body {
     font-weight: bold !important;
     text-shadow: 0 1px 4px #000a;
 }
+/* End centered card */
 
+/* Start star background */
 .stars {
     position: fixed;
     top: 0;
@@ -218,7 +226,9 @@ body {
 
 @media (max-width: 600px) {
 }
+/* End star background */
 
+/* Start music controls */
 .music-controls {
     position: fixed;
     bottom: 20px;
@@ -252,6 +262,7 @@ body {
     transform: scale(0.95);
 }
 
+/* Start work entries */
 .project-link {
     color: #ffd700;
     text-decoration: underline dotted;
@@ -337,7 +348,9 @@ body {
     margin-bottom: 0.5em;
     padding-left: 2.5em;
 }
+/* End work entries */
 
+/* Start creepy fade animation */
 @keyframes fadeCreep {
     0% { opacity: 0.2; }
     10% { opacity: 0.5; }
@@ -353,7 +366,9 @@ body {
     animation: fadeCreep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     transition: opacity 0.5s;
 }
+/* End creepy fade animation */
 
+/* Start scoreboard */
 .scoreboard-overlay {
     position: fixed;
     bottom: 0;
@@ -434,4 +449,142 @@ body {
         font-size: 1em;
     }
 }
-/* ...existing code... */
+/* End scoreboard */
+
+/* Start hamburger icon */
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #000000;
+    box-shadow: none;
+    transition-duration: .25s;
+    z-index: 1000;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #ffd700;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu__item:hover {
+    background-color: rgba(255, 215, 0, 0.06);
+}
+/* End hamburger icon */
+
+/* Start back to top button */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    z-index: 1100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    transform: translateY(12px) scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+    backdrop-filter: blur(8px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover, .back-to-top:focus {
+    transform: scale(1.05);
+    background: rgba(255,215,0,0.08);
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        right: 14px;
+        bottom: 82px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top, .back-to-top.show {
+        transition: none;
+    }
+}
+/* End back to top button */
