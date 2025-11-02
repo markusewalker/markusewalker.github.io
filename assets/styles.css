@@ -113,6 +113,7 @@ main {
 }
 
 .nav-links a {
+    font-family: 'TwilightZone', serif;
     color: #fff;
     font-size: 1.1rem;
     text-decoration: none;
@@ -178,6 +179,11 @@ main {
     }
     .nav-links {
         gap: 1rem;
+    }
+    .centered-card:hover {
+        box-shadow: none;
+        transform: none;
+        border-color: inherit;
     }
 }
 
