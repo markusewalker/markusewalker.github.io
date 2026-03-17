@@ -18,3 +18,8 @@ coverage/
 logs
 *.log
 _site
+Gemfile*
+vendor
+.jekyll-cache
+_site
+.bundle/
