@@ -61,14 +61,58 @@
     </nav>
 
     <main>
-    <h1 class="markus-zone-title creepy-fade">The Markus Zone</h1>
-    <p class="markus-zone-description creepy-fade"><em>"You're travelling through another dimension, a dimension not only of sight and sound but of mind; a journey into a wondrous land whose boundaries are that of imagination. That's the signpost up ahead - your next stop, the Markus Zone!"</em></p>
+        <div id="twilight-intro-container">
+            <p id="twilight-quote" class="markus-zone-description twilight-fade-in"><em>"You're travelling through another dimension, a dimension not only of sight and sound but of mind; a journey into a wondrous land whose boundaries are that of imagination. That's the signpost up ahead - your next stop..."</em></p>
+            <h1 id="markus-zone-title" class="markus-zone-title twilight-fade-out" style="display:none;">The Markus Zone</h1>
+        </div>
     </main>
 
     <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
+        <script src="assets/scripts.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quote = document.getElementById('twilight-quote');
+            const title = document.getElementById('markus-zone-title');
 
-    <script src="assets/scripts.js"></script>
+            function runIntroLoop() {
+                quote.style.display = 'block';
+                quote.classList.remove('twilight-fade-out', 'twilight-fade-in');
+                void quote.offsetWidth;
+                quote.classList.add('twilight-fade-in');
+
+                title.style.display = 'block';
+                title.style.opacity = 0;
+                title.classList.remove('twilight-fade-in', 'twilight-fade-out');
+
+                setTimeout(() => {
+                    quote.classList.remove('twilight-fade-in');
+                    quote.classList.add('twilight-fade-out');
+
+                    setTimeout(() => {
+                        quote.style.display = 'none';
+                        title.style.display = 'block';
+                        title.style.opacity = 1;
+                        void title.offsetWidth;
+                        title.classList.remove('twilight-fade-out');
+                        title.classList.add('twilight-fade-in');
+
+                        setTimeout(() => {
+                            title.classList.remove('twilight-fade-in');
+                            title.classList.add('twilight-fade-out');
+
+                            setTimeout(() => {
+                                title.style.opacity = 0;
+                                title.style.display = 'none';
+                                runIntroLoop();
+                            }, 1200);
+                        }, 10000);
+                    }, 1200);
+                }, 10000);
+            }
+            runIntroLoop();
+        });
+        </script>
 </body>
 </html>

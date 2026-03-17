@@ -37,6 +37,27 @@ main {
 }
 /* End custom TwilightZone font */
 
+/* Twilight Zone intro fade animations */
+.twilight-fade-in {
+    opacity: 0;
+    animation: twilightFadeIn 1.2s forwards;
+}
+
+.twilight-fade-out {
+    opacity: 1;
+    animation: twilightFadeOut 1.2s forwards;
+}
+
+@keyframes twilightFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes twilightFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 /* Start photos and logos */
 .profile-photo {
     width: 220px;
