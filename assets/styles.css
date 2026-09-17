@@ -110,7 +110,7 @@ main {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 1.5rem;
 }
 
@@ -260,6 +260,209 @@ body {
     50% { opacity: 0.3; }
 }
 
+/* Single-page scrolling layout */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+.scroll-page {
+    min-height: 100vh;
+    padding-top: 4rem;
+}
+
+.scroll-section {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.25rem;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.hero-section {
+    min-height: calc(100svh - 4rem);
+    text-align: center;
+}
+
+.hero-content {
+    width: min(760px, 100%);
+}
+
+.hero-content .markus-zone-description {
+    margin-bottom: 2rem;
+}
+
+.hero-content .markus-zone-title {
+    margin-bottom: 0;
+}
+
+.hero-scroll-cue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-top: 4rem;
+    border: 1px solid #ffd70088;
+    border-radius: 50%;
+    color: #ffd700;
+    text-decoration: none;
+    animation: scroll-cue-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(0.5rem); }
+}
+
+.section-card {
+    margin: 0;
+}
+
+.section-card .markus-zone-title {
+    margin-top: 0;
+}
+
+.resume-section-card {
+    max-width: 760px;
+}
+
+.resume-image-viewer {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+}
+
+.resume-image-viewer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.resume-download-btn {
+    display: inline-block;
+    padding: 0.7em 2em;
+    margin-bottom: 0.5em;
+    background: #ffd700;
+    color: #222 !important;
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 2px 8px #0003;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.resume-download-btn:hover,
+.resume-download-btn:focus-visible {
+    background: #fff;
+    color: #222 !important;
+    transform: translateY(-2px);
+}
+
+.projects-section-card {
+    max-width: 800px;
+}
+
+.project-group-title {
+    margin: 2rem 0 0.75rem;
+    color: #ffd700;
+    font-family: 'TwilightZone', serif;
+    letter-spacing: 1px;
+}
+
+.work-entry {
+    width: 100%;
+    margin: 0.75rem 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid #ffd70055;
+    border-radius: 0.75rem;
+    background: rgba(10, 10, 20, 0.45);
+    text-align: left;
+}
+
+.work-entry summary {
+    cursor: pointer;
+    list-style-position: inside;
+}
+
+.work-entry summary h3 {
+    display: inline;
+    margin: 0;
+}
+
+.work-entry .markus-zone-description {
+    margin: 0.75rem 0 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.project-link {
+    color: #ffd700 !important;
+    text-decoration: none;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .scroll-page {
+        padding-top: 3.5rem;
+    }
+
+    .scroll-section,
+    .hero-section {
+        min-height: 100svh;
+        padding: 4rem 0.75rem;
+    }
+
+    .hero-section {
+        min-height: calc(100svh - 3.5rem);
+    }
+
+    .hero-content .markus-zone-description {
+        font-size: 1.25rem;
+        line-height: 1.45;
+    }
+
+    .hero-content .markus-zone-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-scroll-cue {
+        margin-top: 2.5rem;
+    }
+
+    .section-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem 1rem;
+    }
+
+    .resume-image-viewer {
+        max-width: 100%;
+    }
+
+    .project-group-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-scroll-cue {
+        animation: none;
+    }
+}
+
 @media (max-width: 600px) {
 }
 /* End star background */
@@ -404,89 +607,6 @@ body {
 }
 /* End creepy fade animation */
 
-/* Start scoreboard */
-.scoreboard-overlay {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #181818 0%, #232323 100%);
-    color: #fff;
-    border-radius: 14px 14px 0 0;
-    box-shadow: 0 -2px 10px 0 #000b, 0 1px 3px #ffd70044 inset;
-    display: flex;
-    align-items: center;
-    padding: 7px 22px 7px 22px;
-    font-family: 'TwilightZone', serif;
-    font-size: 1.25rem;
-    z-index: 1000;
-    letter-spacing: 1.2px;
-    text-shadow: 0 1px 4px #000, 0 0 1px #fff;
-    border: 2px solid #ffd700;
-    border-bottom: none;
-    min-width: 160px;
-    min-height: 36px;
-    gap: 14px;
-}
-
-.scoreboard-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 8px;
-}
-
-.team-name {
-    font-weight: bold;
-    font-size: 0.95em;
-    letter-spacing: 1.2px;
-    color: #ffd700;
-    text-shadow: 0 1px 4px #000, 0 0 1px #fff;
-    margin-bottom: 1px;
-}
-
-.team-score {
-    background: #222b44;
-    color: #fff;
-    border: 1.5px solid #ffd700;
-    border-radius: 6px;
-    padding: 2px 14px;
-    font-size: 1.25em;
-    font-family: 'TwilightZone', serif;
-    font-weight: bold;
-    box-shadow: 0 1px 6px #000a, 0 0 4px #ffd70044 inset;
-    margin-top: 1px;
-    letter-spacing: 1.2px;
-}
-
-.scoreboard-vs {
-    font-weight: bold;
-    font-size: 1.05em;
-    margin: 0 6px;
-    color: #ffd700;
-    text-shadow: 0 1px 4px #000, 0 0 1px #fff;
-    align-self: center;
-    letter-spacing: 1.2px;
-    padding: 0 4px;
-}
-
-@media (max-width: 600px) {
-    .scoreboard-overlay {
-        font-size: 1rem;
-        padding: 4px 6px;
-        min-width: unset;
-        gap: 6px;
-    }
-    .scoreboard-team {
-        margin: 0 3px;
-    }
-    .team-score {
-        padding: 1px 7px;
-        font-size: 1em;
-    }
-}
-/* End scoreboard */
-
 /* Start hamburger icon */
 /* Desktop: hide hamburger and mobile menu */
 .menu__btn,
@@ -606,6 +726,31 @@ body {
     }
 }
 /* End hamburger icon */
+
+@media (max-width: 600px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar-content {
+        width: 100%;
+        padding: 0 0.35rem;
+    }
+
+    .nav-links {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.15rem;
+    }
+
+    .nav-links a {
+        padding: 0.3em 0.4em;
+        font-size: 0.86rem;
+        letter-spacing: 0.4px;
+    }
+}
 
 /* Start back to top button */
 .back-to-top {
