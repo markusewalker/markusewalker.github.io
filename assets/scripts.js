@@ -1,65 +1,3 @@
-let youScore = Number(sessionStorage.getItem('youScore')) || 0;
-let tmzScore = Number(sessionStorage.getItem('tmzScore')) || 0;
-let gameOver = false;
-
-const WINNING_SCORE = 100;
-
-function updateScoreboard() {
-    const youScoreElement = document.getElementById('score-you');
-    const tmzScoreElement = document.getElementById('score-tmz');
-
-    const you = typeof global !== 'undefined' && typeof global.youScore !== 'undefined' ? global.youScore : youScore;
-    const tmz = typeof global !== 'undefined' && typeof global.tmzScore !== 'undefined' ? global.tmzScore : tmzScore;
-
-    if (youScoreElement) {
-        youScoreElement.textContent = you;
-    }
-
-    if (tmzScoreElement) {
-        tmzScoreElement.textContent = tmz;
-    }
-}
-
-// saveScores saves the current scores to sessionStorage
-function saveScores() {
-    sessionStorage.setItem('youScore', youScore);
-    sessionStorage.setItem('tmzScore', tmzScore);
-}
-
-// randomScore generates a random score between 1 and 3 to simulate basketball
-function randomScore() {
-    return Math.floor(Math.random() * 3) + 1;
-}
-
-// randomTeam randomly selects either 'you' or 'tmz' to receive the score
-function randomTeam() {
-    return Math.random() < 0.5 ? 'you' : 'tmz';
-}
-
-// checkWinner checks if either team has reached the winning score
-function checkWinner() {
-    if (!gameOver && (youScore >= WINNING_SCORE || tmzScore >= WINNING_SCORE)) {
-        gameOver = true;
-    }
-}
-
-setInterval(() => {
-    if (!gameOver) {
-        const points = randomScore();
-        const team = randomTeam();
-
-        if (team === 'you') {
-            youScore = Math.min(youScore + points, WINNING_SCORE);
-        } else {
-            tmzScore = Math.min(tmzScore + points, WINNING_SCORE);
-        }
-
-        updateScoreboard();
-        saveScores();
-        checkWinner();
-    }
-}, 5000);
-
 // initializeStars is a function that creates a starry background effect
 function initializeStars() {
     const starsContainer = document.querySelector('.stars');
@@ -254,8 +192,55 @@ function initializeSmoothScrolling() {
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
+            const menuToggle = document.getElementById('menu__toggle');
+            if (menuToggle) {
+                menuToggle.checked = false;
+            }
         });
     });
+}
+
+function initializeIntroAnimation() {
+    const quote = document.getElementById('twilight-quote');
+    const title = document.getElementById('markus-zone-title');
+
+    if (!quote || !title) return;
+
+    function runIntroLoop() {
+        quote.style.display = 'block';
+        quote.classList.remove('twilight-fade-out', 'twilight-fade-in');
+        void quote.offsetWidth;
+        quote.classList.add('twilight-fade-in');
+
+        title.style.display = 'block';
+        title.style.opacity = 0;
+        title.classList.remove('twilight-fade-in', 'twilight-fade-out');
+
+        setTimeout(() => {
+            quote.classList.remove('twilight-fade-in');
+            quote.classList.add('twilight-fade-out');
+
+            setTimeout(() => {
+                quote.style.display = 'none';
+                title.style.opacity = 1;
+                void title.offsetWidth;
+                title.classList.add('twilight-fade-in');
+
+                setTimeout(() => {
+                    title.classList.remove('twilight-fade-in');
+                    title.classList.add('twilight-fade-out');
+
+                    setTimeout(() => {
+                        title.style.opacity = 0;
+                        title.style.display = 'none';
+                        runIntroLoop();
+                    }, 1200);
+                }, 10000);
+            }, 1200);
+        }, 10000);
+    }
+
+    runIntroLoop();
 }
 
 // initializeBackToTop sets up the sticky back-to-top button for relevant pages
@@ -322,10 +307,10 @@ function initializeBackToTop() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    updateScoreboard();
     initializeStars();
     initializeBackgroundMusic();
     initializeNavigation();
     initializeSmoothScrolling();
+    initializeIntroAnimation();
     initializeBackToTop();
 });
