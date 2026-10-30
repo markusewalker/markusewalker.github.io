@@ -727,31 +727,6 @@ html {
 }
 /* End hamburger icon */
 
-@media (max-width: 600px) {
-    .hamburger-menu {
-        display: none;
-    }
-
-    .navbar-content {
-        width: 100%;
-        padding: 0 0.35rem;
-    }
-
-    .nav-links {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.15rem;
-    }
-
-    .nav-links a {
-        padding: 0.3em 0.4em;
-        font-size: 0.86rem;
-        letter-spacing: 0.4px;
-    }
-}
-
 /* Start back to top button */
 .back-to-top {
     position: fixed;

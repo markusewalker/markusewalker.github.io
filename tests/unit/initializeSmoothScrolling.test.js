@@ -18,4 +18,19 @@ describe('initializeSmoothScrolling', () => {
     const anchorLink = document.querySelector('a[href="#section1"]');
     expect(anchorLink).toBeTruthy();
   });
+
+  test('scrolls to the selected section and closes the mobile menu', () => {
+    document.body.innerHTML = `
+      <input id="menu__toggle" type="checkbox" checked>
+      <a class="menu__item" href="#about">About</a>
+      <section id="about"></section>
+    `;
+    Element.prototype.scrollIntoView = jest.fn();
+
+    initializeSmoothScrolling();
+    document.querySelector('.menu__item').click();
+
+    expect(Element.prototype.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' });
+    expect(document.getElementById('menu__toggle').checked).toBe(false);
+  });
 });
