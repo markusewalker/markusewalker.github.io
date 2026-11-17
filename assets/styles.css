@@ -196,14 +196,6 @@ main {
         margin: 1.2rem 0.1rem;
         max-width: 99vw;
     }
-    .resume-image-viewer {
-        max-width: 98vw !important;
-        margin: 0 auto 1em auto !important;
-    }
-    .resume-image-viewer img {
-        max-width: 98vw !important;
-        border-radius: 10px !important;
-    }
     .navbar-content {
         padding: 0 0.5rem;
     }
@@ -325,43 +317,6 @@ html {
     margin-top: 0;
 }
 
-.resume-section-card {
-    max-width: 760px;
-}
-
-.resume-image-viewer {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto 1.5rem;
-}
-
-.resume-image-viewer img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
-}
-
-.resume-download-btn {
-    display: inline-block;
-    padding: 0.7em 2em;
-    margin-bottom: 0.5em;
-    background: #ffd700;
-    color: #222 !important;
-    border-radius: 2em;
-    text-decoration: none;
-    box-shadow: 0 2px 8px #0003;
-    transition: background 0.2s, transform 0.2s;
-}
-
-.resume-download-btn:hover,
-.resume-download-btn:focus-visible {
-    background: #fff;
-    color: #222 !important;
-    transform: translateY(-2px);
-}
-
 .projects-section-card {
     max-width: 800px;
 }
@@ -442,10 +397,6 @@ html {
         width: 100%;
         max-width: 100%;
         padding: 1.5rem 1rem;
-    }
-
-    .resume-image-viewer {
-        max-width: 100%;
     }
 
     .project-group-title {
